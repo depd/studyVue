@@ -20,6 +20,64 @@
 				<input type="text" name="" id="" value="" v-model="sex" placeholder="性别是..."/>
 				<span v-show="sex">性别是	{{sex}}</span>
 			</div>
+			
+			<div>
+				<input type="text" v-model="names"/>
+				{{names}}
+				
+				<input type="text" v-model.lazy="namees"/>
+				{{namees}}
+				<pre>{{namees}}</pre>
+				
+				<input type="text" v-model.trim="namess"/>
+				{{namess}}
+				
+				<input type="text" v-model.number="prices"/>
+				{{prices}}
+			</div>
+			
+			<div>你来自哪里？</div>
+			<select v-model="from">
+				<option value="1">王家沟</option>
+				<option value="2">背背山</option>
+				<option value="3">王家沟</option>
+				<option value="4">王家沟</option>
+				<option value="5">背背山</option>
+			</select>
+			{{from}}
+			
+			<div>你要去哪里？</div>
+			<select v-model="dest" multiple>
+				<option value="1">王家沟</option>
+				<option value="2">背背山</option>
+				<option value="3">王家沟</option>
+				<option value="4">王家沟</option>
+				<option value="5">背背山</option>
+			</select>
+			{{dest}}
+			
+			<label for="">
+				男
+				<input type="radio" v-model="sex" value="male"/>
+			</label>
+			<label for="">
+				女
+				<input type="radio" v-model="sex" value="female"/>
+			</label>
+			
+			{{sex}}
+			
+			
+			<label for="">
+				男
+				<input type="checkbox" v-model="seeee" value="male"/>
+			</label>
+			<label for="">
+				女
+				<input type="checkbox" v-model="seeee" value="female"/>
+			</label>
+			
+			{{seeee}}
 		</div>
 		
 		<script src="js/vue.js"></script>
