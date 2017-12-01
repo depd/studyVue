@@ -16,6 +16,7 @@ var app = new Vue({
 				name:"蒜",
 				price: 18
 			}
-		]
+		],
+		isactive:false,
 	}
 })

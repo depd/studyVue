@@ -3,14 +3,24 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
+		<style>
+			.box{
+				width:200px;
+				height:100px;
+				background-color:red;
+			}
+		</style>
 	</head>
 	<body>
 		<div id="app">
 			<ul>
 				<li v-for="food in foodList">{{food.name}}:￥ {{food.discount?food.price * food.discount :food.price}}</li>
 			</ul>	
+			
+			<div v-bind:class="{box:isactive}">
+				300
+			</div>
 		</div>
-		
 		<script src="js/vue.js"></script>
 		<script src="lie/v-for.js"></script>
 	</body>
