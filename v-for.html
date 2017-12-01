@@ -20,6 +20,14 @@
 			<div v-bind:class="{box:isactive}">
 				300
 			</div>
+			
+			<button v-on:click="onClick" v-on="{mouseenter:enter,mouseleave:outer}"> 点我 </button>
+			
+			<form v-on:submit.prevent="onsubmit()" >
+				<input type="text" v-on:keyup="keyup" />
+				<input type="text" v-on:keyup.enter="keyups" />
+				<button> 提交 </button>
+			</form>
 		</div>
 		<script src="js/vue.js"></script>
 		<script src="lie/v-for.js"></script>

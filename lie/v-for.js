@@ -18,5 +18,25 @@ var app = new Vue({
 			}
 		],
 		isactive:false,
+	},
+	methods:{
+		onClick:function(){
+			console.log("clicked:点击了");
+		},
+		enter:function(){
+			console.log("enter");
+		},
+		outer:function(){
+			console.log("outer");
+		},
+		onsubmit:function(){
+			console.log("aaa");
+		},
+		keyup:function(){
+			console.log("foodList");
+		},
+		keyups:function(){
+			console.log("foodLists");
+		}
 	}
 })
