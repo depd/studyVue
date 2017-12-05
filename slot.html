@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.pannle{
+				width:400px;
+				border:1px solid #ccc;
+				margin-bottom:15px;
+			}
+			.pannle > *{
+				padding:10px;
+			}
+			.content{
+				border-top:1px solid #ccc;
+				border-bottom:1px solid #ccc;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<pannle>
+				<div slot="title">
+					逆天
+				</div>
+				<div slot="content">
+					？？
+				</div>
+				<div slot="footer">
+					你好帅哦，逆天，
+				</div>
+			</pannle>
+			<pannle>
+				<div slot="title">
+					hahahaahah,你也是
+				</div>
+				<div slot="content">
+					不不不，你是真的帅，逆天
+				</div>
+			</pannle>
+		</div>
+		<template id="pannles">
+			<div class="pannle">
+				<div class="title">
+					<slot name="title"></slot>
+				</div>
+				<div class="content">
+					<slot name="content"></slot>
+				</div>
+				<div class="footer">
+					<slot name="footer">
+						显示更多
+					</slot>
+				</div>
+			</div>
+		</template>
+		<script src="js/vue.js"></script>
+		<script src="lie/slot.js"></script>
+	</body>
+</html>
