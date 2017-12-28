@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>高级用法-动态组件</title>
+	</head>
+	<body>
+		<div id="app">
+			<component :is="currentViews"></component>
+			<button @click='currentView("A")'>切换到A</button>
+			<button @click='currentView("B")'>切换到B</button>
+			<button @click='currentView("C")'>切换到C</button>
+		</div>
+		<script src="js/vue.js"></script>
+		<script>
+			
+			var app = new Vue({
+				el:"#app",
+				components:{
+					comA:{
+						template:`<div>组件A</div>`
+					},
+					comB:{
+						template:`<div>组件B</div>`
+					},
+					comC:{
+						template:`<div>组件C</div>`
+					},
+				},
+				data:{
+					currentViews:"comA"
+				},
+				methods:{
+					currentView:function(component){
+						this.currentViews = "com" + component;
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
