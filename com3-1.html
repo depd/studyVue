@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>$emit()</title>
+	</head>
+	<body>
+		<div id="app">
+			<p>总数：{{total}}</p>
+			<coms @inadd="handAdd" @inreduce="handAdd"></coms>
+		</div>
+		<script src="js/vue.js"></script>
+		<script>
+			Vue.component("coms",{
+				template:
+					`
+						<div>
+							<button @click="add()">	+1	</button>
+							<button @click="reduces()">	-1	</button>
+						</div>
+					`,
+				data:function(){
+					return{
+						count:0
+					}
+				},
+				methods:{
+					add:function(){
+						this.count++;
+						this.$emit("inadd",this.count);
+					},
+					reduces:function(){
+						this.count--;
+						this.$emit("inreduce",this.count);
+					}
+				}
+			});
+			var	app = new Vue({
+				el:"#app",
+				data:{
+					total:0
+				},
+				methods:{
+					handAdd:function(total){
+						console.log(total);
+						this.total = total;
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

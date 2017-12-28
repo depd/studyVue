@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> slot学习</title>
+	</head>
+	<body>
+		<div id="app">
+			<!--<children>
+				<p slot="header">我才是真正的标题</p>
+				<div slot="content">
+					<p>我是内容</p>5  
+				</div>
+				<div slot="footer">
+					<p>那我结束了哦</p>
+				</div>
+			</children>-->
+			<children>
+				<template scope="props">
+					<div>
+						<p>来自父组件的内容</p>
+						<p>{{props.msg}}</p>
+					</div>
+				</template>
+			</children>
+		</div>
+		<script src="js/vue.js"></script>
+		<script>
+//			Vue.component("children",{
+//				template:
+//				`
+//					<div>
+//						<div class="header">
+//							<slot name="header">
+//								<p>没有内容的时候,我显示的是标题</p>
+//							</slot>
+//						</div>
+//						<div class="content">
+//							<slot name="content">
+//								<p>没有内容的时候,我显示内容</p>
+//							</slot>
+//						</div>
+//						<div class="footer">
+//							<slot name="footer">
+//								<p>没有内容的时候,我显示结束</p>
+//							</slot>
+//						</div>
+//					</div>
+//				`,
+//			});
+			Vue.component("children",{
+				template:
+				`
+					<div class="container">
+						<slot msg="来自子组件的内容"></slot>
+					</div>
+				`
+			})
+			var app = new Vue({
+				el:"#app",
+				data:{
+					show:true
+				}
+			});
+		</script>
+	</body>
+</html>

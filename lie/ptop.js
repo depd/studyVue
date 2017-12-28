@@ -38,7 +38,7 @@ Vue.component("shuandan",{
 		Event.$on("huahua-side-something",function(data){
 			that.huahuaside = data;
 		});
-	}
+	} 
 })
 
 new Vue({
