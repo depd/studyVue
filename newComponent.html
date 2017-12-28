@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>高级用法-递归组件</title>
+		<style>
+			.children{
+				width:100px;
+				height:40px;
+				background:#f00;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<children :count="1"></children>
+		</div>
+		<script src="js/vue.js"></script>
+		<script>
+			Vue.component("children",{
+				name:"children",
+				props:{
+					count:{
+						type:Number,
+						default:1
+					}
+				},
+				template:
+				`
+					<div class="children">
+						<children 
+							:count="count + 1"
+							v-if="count < 2"></children>
+					</div>
+				`
+			});
+			var app = new Vue({
+				el:"#app"
+			})
+		</script>
+	</body>
+</html>
