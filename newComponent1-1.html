@@ -13,7 +13,13 @@
 		</div>
 		<script src="js/vue.js"></script>
 		<script>
-			
+			var  Home = {
+				template:`
+					<div>
+						<p>欢迎来到Home!</p>
+					</div>
+				`
+			}
 			var app = new Vue({
 				el:"#app",
 				components:{
@@ -35,7 +41,8 @@
 						this.currentViews = "com" + component;
 					}
 				}
-			})
+			});
+			app.currentViews = Home;
 		</script>
 	</body>
 </html>
